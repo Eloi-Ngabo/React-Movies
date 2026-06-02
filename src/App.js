@@ -51,13 +51,13 @@ function numberOfItems() {
     <Router>
       <div className="App">
         <Nav numberOfItems={numberOfItems()}/>
-      
-          <Route path="/" exact render={() => <Home movies={movies} />} />
-          <Route path="/movies" exact render={() => <Movies movies={movies} />} />
-          <Route path="/movies/:id"  render={() => (<Movieinfo movies={movies} addToSaved={addToSaved} saved={saved}/>) } />
-          <Route path="/saved" render={() => (<Saved movies={movies} saved={saved} 
+          <Routes>
+          <Route path="/"  element={() => <Home movies={movies} />} />
+          <Route path="/movies/1"  element={() => <Movies movies={movies} />} />
+          <Route path="/movies/:id"  element={() => (<Movieinfo movies={movies} addToSaved={addToSaved} saved={saved}/>) } />
+          <Route path="/saved" element={() => (<Saved movies={movies} saved={saved} 
           changeQuantity={changeQuantity} removeItem={removeItem}/>)} />
-      
+          </Routes>
         <Footer />
       </div>
     </Router>
