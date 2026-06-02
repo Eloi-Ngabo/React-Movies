@@ -1,25 +1,66 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Nav from './Components/Nav';
+import Footer from './Components/Footer';
+import Home from './Pages/Home';
+import Movies from './Pages/Movies';
+import {movies} from './data';
+import Saved from './Pages/Saved';
+import { useEffect, useState } from 'react';
+import Movieinfo from './Pages/Movieinfo';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+  const [saved, setSaved] = useState([])
+
+  function addToSaved(movie) {
+      setSaved ([...saved, {...movie, quantity: 1}])
+  }
+
+
+ function changeQuantity(movie, quantity) {
+  setSaved(saved.map((item) => item.id === movie.id 
+     ? {
+      ...item,
+      quantity: +quantity,
+     } 
+   
+    : item
+
+  ));
+
+ }
+
+function removeItem(item) {
+  setSaved(saved.filter(movie => movie.id !== item.id)) 
 }
 
+function numberOfItems() {
+  let counter = 0;
+  saved.forEach(item => {
+    counter += item.quantity
+  })
+  return counter;
+}
+
+  useEffect(() => {
+    // console.log(saved)
+  }, [saved]);
+
+
+  return (
+    <Router>
+      <div className="App">
+        <Nav numberOfItems={numberOfItems()}/>
+      
+          <Route path="/" exact render={() => <Home movies={movies} />} />
+          <Route path="/movies" exact render={() => <Movies movies={movies} />} />
+          <Route path="/movies/:id"  render={() => (<Movieinfo movies={movies} addToSaved={addToSaved} saved={saved}/>) } />
+          <Route path="/saved" render={() => (<Saved movies={movies} saved={saved} 
+          changeQuantity={changeQuantity} removeItem={removeItem}/>)} />
+      
+        <Footer />
+      </div>
+    </Router>
+  );
+}
 export default App;
