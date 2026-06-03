@@ -6,11 +6,10 @@ import Price from "../En/Price";
 import Movie from "../En/Movie";
 
 
-const Movieinfo = ({movies, addToSaved, saved}) => {
+const Movieinfo = ({movies, addToSaved, saved, imdbID}) => {
 
-    const {imdbID} = useParams();
-    const movie = movies.find((movie) => +movie.imdbID === +imdbID);
-   
+    const {id} = useParams();
+    const movie = movies.find((movie) => movie.imdbID === imdbID);
     function addToSaved(movie) {
         addToSaved(movie)
     }

@@ -33,14 +33,14 @@ const Movie = ({ movie }) => {
     {
         img ? (
         <>
-         <Link to={`/movies/${movie.id}`} >
+         <Link to={`/movies/${movie.imdbID}`} >
         <figure className="book__img--wrapper">
         <img src={movie.Poster} alt = "" 
         className="book__img" />
         </figure>
     </Link> 
         <div className="book__title">
-        <Link to={`/movies/${movie.id}`}  className="book__title--link">
+        <Link to={`/movies/${movie.imdbID}`}  className="book__title--link">
         {movie.title}
         </Link>
     </div> 

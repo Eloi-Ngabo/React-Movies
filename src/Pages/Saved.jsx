@@ -29,7 +29,7 @@ const Saved = ({ saved, changeQuantity, removeItem }) => {
               <div className="cart__body">
                 {saved.map((movie) => {
                   return (
-                    <div className="cart__item" key={movie.id}>
+                    <div className="cart__item" key={movie.imdbID}>
                       <div className="cart__book">
                         <img
                           src={movie.poster}

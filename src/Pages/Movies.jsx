@@ -4,7 +4,7 @@ import Movie from "../En/Movie";
 const Movies = ({ movies: initialMovies }) => {
 const [movies, setMovies] =useState(initialMovies);
 
-console.log(movies)
+
 
 
   function filterMovies(filter) {

@@ -54,7 +54,7 @@ function numberOfItems() {
           <Routes>
           <Route path="/"  element= {<Home movies={movies} />} />
           <Route path="/movies"  element={<Movies movies={movies} />} />
-          <Route path="movies/:imdbID" element={<Movieinfo movies={movies} addToSaved={addToSaved}/> } />
+          <Route path="movies/:imdbID" element={<Movieinfo movies={movies} addToSaved={addToSaved} saved={saved}/> } />
           <Route path="/saved" element={<Saved movies={movies} saved={saved} 
           changeQuantity={changeQuantity} removeItem={removeItem}/>} />
           </Routes>

@@ -3,7 +3,12 @@ import { Link } from "react-router-dom";
 import undrawVirtual from "../assets/undraw_virtual.svg";
 const Landing = () => {
   function searchMovies() {
-    // console.log("searching movies")
+    const searchInput = document.querySelector(".search-input");
+    const searchTerm = searchInput.value.trim();
+    if (searchTerm) {
+      // Redirect to the movies page with the search term as a query parameter
+      window.location.href = `/movies?search=${encodeURIComponent(searchTerm)}`;
+    }
   }
 
     return (
