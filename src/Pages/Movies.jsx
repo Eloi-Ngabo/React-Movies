@@ -4,6 +4,8 @@ import Movie from "../En/Movie";
 const Movies = ({ movies: initialMovies }) => {
 const [movies, setMovies] =useState(initialMovies);
 
+console.log(movies)
+
 
   function filterMovies(filter) {
         console.log(filter)
@@ -40,7 +42,7 @@ const [movies, setMovies] =useState(initialMovies);
               </div>
               <div className="books">
                 {movies.map((movie) => (
-                  <Movie movie={movie} key={movie.id} />
+                  <Movie movie={movie} key={movie.imdbID} />
                 ))}
               </div>
             </div>

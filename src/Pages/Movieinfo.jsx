@@ -8,15 +8,15 @@ import Movie from "../En/Movie";
 
 const Movieinfo = ({movies, addToSaved, saved}) => {
 
-    const {id} = useParams();
-    const movie = movies.find((movie) => +movie.id === +id);
+    const {imdbID} = useParams();
+    const movie = movies.find((movie) => +movie.imdbID === +imdbID);
    
     function addToSaved(movie) {
         addToSaved(movie)
     }
 
     function movieExistsOnSaved() {
-        return saved.find(movie => movie.id === +id)
+        return saved.find(movie => movie.imdbID === +imdbID)
     }
 
   return (
@@ -69,7 +69,7 @@ const Movieinfo = ({movies, addToSaved, saved}) => {
                     <button className="btn">See Saved</button>
                   </Link>
                 ) : (
-                  <button className="btn" onClick={() => addToSaved(movie)}>
+                  <button className="btn" onClick={() => addToSaved(movies)}>
                     Add to Saved
                   </button>
                 )}
@@ -85,10 +85,10 @@ const Movieinfo = ({movies, addToSaved, saved}) => {
             </div>
             <div className="books">
               {movies
-                .filter((movie) => movie.rating === 5 && +movie.id !== +id)
+                .filter((movie) => movie.rating === 5 && +movie.imdbID !== +imdbID)
                 .slice(0, 4)
                 .map((movie) => (
-                  <Movie movie={movie} key={movie.id} />
+                  <Movie movie={movie} key={movie.imdbID} />
                 ))}
             </div>
           </div>

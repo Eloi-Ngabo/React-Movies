@@ -31,7 +31,7 @@ function App() {
  }
 
 function removeItem(item) {
-  setSaved(saved.filter(movie => movie.id !== item.id)) 
+  setSaved(saved.filter(movie => movie.imdbID !== item.imdbID)) 
 }
 
 function numberOfItems() {
@@ -53,8 +53,8 @@ function numberOfItems() {
         <Nav numberOfItems={numberOfItems()}/>
           <Routes>
           <Route path="/"  element= {<Home movies={movies} />} />
-          <Route path="/movies/1"  element={<Movies movies={movies} />} />
-          <Route path="/movies/:id"  element = {<Movieinfo movies={movies} addToSaved={addToSaved}/> } />
+          <Route path="/movies"  element={<Movies movies={movies} />} />
+          <Route path="movies/:imdbID" element={<Movieinfo movies={movies} addToSaved={addToSaved}/> } />
           <Route path="/saved" element={<Saved movies={movies} saved={saved} 
           changeQuantity={changeQuantity} removeItem={removeItem}/>} />
           </Routes>
