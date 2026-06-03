@@ -8,13 +8,13 @@ import  { Link }  from 'react-router-dom';
 
 
 const Nav = ({ numberOfItems }) => {
-  const openMenu = () => {
+  function openMenu() {
     document.body.classList += " menu--open";
   };
 
-  const closeMenu = () => {
+  function closeMenu() {
     document.body.classList.remove("menu--open");
-  };  
+  }
 
   return (
     <nav>
@@ -29,7 +29,7 @@ const Nav = ({ numberOfItems }) => {
                     Home
                </Link>            </li>
             <li className="nav__list">
-                <Link to="/books" className="nav__link">
+                <Link to="/movies" className="nav__link">
                 Movies
                </Link>         
                   </li>
@@ -39,11 +39,11 @@ const Nav = ({ numberOfItems }) => {
             </button>
 
             <li className="nav__icon">
-                <Link to="/cart" className="nav__link">
+                <Link to="/saved" className="nav__link">
                     <FontAwesomeIcon icon="shopping-cart" />
                </Link> 
                {numberOfItems > 0 &&           
-                <span className="cart__length">{numberOfItems}</span>
+                <span className="saved__length">{numberOfItems}</span>
                }
             </li>
         </ul>
@@ -57,12 +57,13 @@ const Nav = ({ numberOfItems }) => {
                             Home
                        </Link>                    </li>
                     <li className="menu__list">
-                        <Link to="/books" className="menu__link">
+                        <Link to="/movies" className="menu__link">
                           Movies  
                        </Link>                    </li>
                     <li className="menu__list">
-                        <Link to="/cart" className="menu__link">
-                            Cart
+                        <Link to="/saved" className="menu__link">
+                            Saved
+
                        </Link>                    </li>
                 </ul>
         </div>
