@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import Movie from "../En/Movie";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Movies = ({ movies: initialMovies }) => {
 const [movies, setMovies] =useState(initialMovies);
+console.log(movies)
 
 
 
@@ -43,7 +45,10 @@ const [movies, setMovies] =useState(initialMovies);
               <div className="books">
                 {movies.map((movie) => (
                   <Movie movie={movie} key={movie.imdbID} />
+               
                 ))}
+                <FontAwesomeIcon icon="spinner" className="movies__loading--spinner" />
+                  
               </div>
             </div>
           </div>

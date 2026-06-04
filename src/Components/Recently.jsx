@@ -13,7 +13,7 @@ const Recently = ({movies}) => {
             .filter((movie) => movie.salePrice > 0)
             .slice(0, 8)
             .map((movie)=> (
-                <Movie movie={movie} key={movie.id} />
+                <Movie movie={movie} key={movie.imdbID} />
             ))}
             
             </div>

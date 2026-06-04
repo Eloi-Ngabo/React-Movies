@@ -10,8 +10,8 @@ const Home = ({ movies }) => {
   <>
     <Landing />
     <Highlights />
-    <Featured movies={movies} />
-    <Recently movies={movies} />
+    {/* <Featured movies={movies} />
+    <Recently movies={movies} /> */}
     <Explore />
   </>
   );

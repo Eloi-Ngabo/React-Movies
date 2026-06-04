@@ -20,7 +20,7 @@ const Footer = () => {
               Movies
              </Link>
              <Link to ="/cart" className="footer__link">
-             Cart
+             Saved
              </Link>
              </div>
              <div className="footer__copyright">

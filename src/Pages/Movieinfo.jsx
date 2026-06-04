@@ -6,9 +6,9 @@ import Price from "../En/Price";
 import Movie from "../En/Movie";
 
 
-const Movieinfo = ({movies, addToSaved, saved, imdbID}) => {
+const Movieinfo = ({movies, addToSaved, saved}) => {
 
-    const {id} = useParams();
+    const {imdbID} = useParams();
     const movie = movies.find((movie) => movie.imdbID === imdbID);
     function addToSaved(movie) {
         addToSaved(movie)
@@ -24,10 +24,10 @@ const Movieinfo = ({movies, addToSaved, saved, imdbID}) => {
         <div className="books__container">
           <div className="row">
             <div className="book__selected--top">
-              <Link to="/books" className="book__link">
+              <Link to="/movies" className="book__link">
                 <FontAwesomeIcon icon="arrow-left" />
               </Link>
-              <Link to="/books" className="book__link">
+              <Link to="/movies" className="book__link">
                 <h2 className="book__selected--title--top">Movies</h2>
               </Link>
             </div>
@@ -68,8 +68,8 @@ const Movieinfo = ({movies, addToSaved, saved, imdbID}) => {
                     <button className="btn">See Saved</button>
                   </Link>
                 ) : (
-                  <button className="btn" onClick={() => addToSaved(movies)}>
-                    Add to Saved
+                  <button className="btn" >
+                     Watched
                   </button>
                 )}
               </div>
@@ -77,7 +77,7 @@ const Movieinfo = ({movies, addToSaved, saved, imdbID}) => {
           </div>
         </div>
 
-        <div className="books__container">
+        {/* <div className="books__container">
           <div className="row">
             <div className="book__selected--top">
               <h2 className="book__selected--title--top">Recommended Movies</h2>
@@ -91,7 +91,7 @@ const Movieinfo = ({movies, addToSaved, saved, imdbID}) => {
                 ))}
             </div>
           </div>
-        </div>
+        </div> */}
       </main>
     </div>
   );

@@ -1,6 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import undrawVirtual from "../assets/undraw_virtual.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+
+
 const Landing = () => {
   function searchMovies() {
     const searchInput = document.querySelector(".search-input");
@@ -33,8 +37,8 @@ const Landing = () => {
                 className="movies__search btn__search"
                 onClick={() => searchMovies()}
               >
-                <i className="fa-solid fa-magnifying-glass search-icon"></i>
-                <i className="fas fa-spinner movies__loading--spinner"></i>
+                <FontAwesomeIcon icon="magnifying-glass" className="search-icon" />
+                <FontAwesomeIcon icon="spinner" className="fas fa-spinner movies__loading--spinner" />
               </button>
             </div>
           </div>
