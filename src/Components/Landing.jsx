@@ -1,9 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import undrawVirtual from "../assets/undraw_virtual.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-
 
 const Landing = () => {
   function searchMovies() {
@@ -11,15 +9,15 @@ const Landing = () => {
     const searchTerm = searchInput.value.trim();
     if (searchTerm) {
       // Redirect to the movies page with the search term as a query parameter
-      window.location.href = `/movies?search=${encodeURIComponent(searchTerm)}`;
+      useNavigate = `/movies?search=${encodeURIComponent(searchTerm)}`;
     }
   }
 
-    return (
-        <section className="landing">
-            <header>
-                <div className="header__container">
-                    <div className="header__description">
+  return (
+    <section className="landing">
+      <header>
+        <div className="header__container">
+          <div className="header__description">
             <h1>America's most awarded movie subscription platform</h1>
             <h2>
               Find your dream movie with <span className="purple">BLINKER</span>
@@ -37,8 +35,14 @@ const Landing = () => {
                 className="movies__search btn__search"
                 onClick={() => searchMovies()}
               >
-                <FontAwesomeIcon icon="magnifying-glass" className="search-icon" />
-                <FontAwesomeIcon icon="spinner" className="fas fa-spinner movies__loading--spinner" />
+                <FontAwesomeIcon
+                  icon="magnifying-glass"
+                  className="search-icon"
+                />
+                <FontAwesomeIcon
+                  icon="spinner"
+                  className="fas fa-spinner movies__loading--spinner"
+                />
               </button>
             </div>
           </div>

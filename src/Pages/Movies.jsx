@@ -6,10 +6,7 @@ import axios from "axios";
 
 const Movies = ({ movies: initialMovies }) => {
 const [movies, setMovies] =useState(initialMovies || []);
-
-
-console.log(movies)
-
+// console.log(movies)
 
 
   function filterMovies(filter) {
@@ -20,17 +17,12 @@ console.log(movies)
        if (filter === "Oldest_TO_Newest") {
             setMovies (movies.slice().sort((a, b) => b.Year - a.Year)) 
     }
-    if (filter === "RATING") {
-         setMovies (movies.slice().sort((a, b) =>(b.rating - a.rating)))
-    }
 }
 
-
     const {data} = useParams();
-    
     useEffect(() => {
       async function getchMovie() {
-           const { data } = await axios.get(`https://www.omdbapi.com/?apikey=ba5cd1ce&i=fast&type=movie`);
+           const { data } = await axios.get(`https://www.omdbapi.com/?apikey=ba5cd1ce&s=fast&type=movie`);
          setMovies(data.Search || []);
         }
         getchMovie();
@@ -53,15 +45,13 @@ console.log(movies)
                   <option value="DEFAULT" disabled>Sort</option>
                   <option value="Newest_TO_Oldest"> Oldest To Newest</option>
                   <option value="Oldest_TO_Newest"> Newest To Oldest</option>
-                  <option value="Rating">Rating</option>
-                  <option value="Year">Year</option>
                 </select>
               </div>
               <div className="books">
                 {movies.map((movie) => (
                   <Movie movie={movie} key={movie.imdbID} />
                 ))}
-                <FontAwesomeIcon icon="spinner" className="movies__loading--spinner" />
+               
               </div>
             </div>
           </div>
