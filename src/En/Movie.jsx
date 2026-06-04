@@ -7,29 +7,29 @@ import Price from './Price';
 import Movies from '../Pages/Movies';
 
 // const Movie = ({ movie }) => {
-// //    const [img, setImg] = useState ();
+//    const [img, setImg] = useState ();
 
-// //     const mountedRef = useRef(true);
+//     const mountedRef = useRef(true);
 
-// //     useEffect(() => {
-// //         mountedRef.current = true;
-// //         const image = new Image()
-// //         image.src = movie.Poster;
-// //         image.onload = () => {
-// //             setTimeout(() => {
-// //                 if (mountedRef.current) {
-// //                     setImg(image);
-// //                 }
-// //             }, 300);    
-// //         };
+//     useEffect(() => {
+//         mountedRef.current = true;
+//         const image = new Image()
+//         image.src = movie.Poster;
+//         image.onload = () => {
+//             setTimeout(() => {
+//                 if (mountedRef.current) {
+//                     setImg(image);
+//                 }
+//             }, 300);    
+//         };
 
-// //         return () => {
-// //             // when the component unmounts
-// //             mountedRef.current = false;
-// //         }
-// //     });
+//         return () => {
+//             // when the component unmounts
+//             mountedRef.current = false;
+//         }
+//     });
 
-// c
+
 
 
 
@@ -74,16 +74,15 @@ import Movies from '../Pages/Movies';
 
 const Movie = () => {
 
-    const {movie} = useParams();
+    const {imdbID} = useParams();
     const [movies, setMovies] = useState([]);
   
 
 
     useEffect(() => {
         async function getchMovie() {
-    //    const { data } = await axios.get(`https://www.omdbapi.com/?apikey=ba5cd1ce&s=fast&type=movie`);
-           const { data } = await axios.get(`https://www.omdbapi.com/?apikey=ba5cd1ce&s=${movie}&type=movie`);
-         setMovies(data.Search);
+           const { data } = await axios.get(`https://www.omdbapi.com/?apikey=ba5cd1ce&i=${imdbID}&type=movie`);
+         setMovies([data]);
         }
         getchMovie();
 

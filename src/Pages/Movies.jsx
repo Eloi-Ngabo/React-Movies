@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Movie from "../En/Movie";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 const Movies = ({ movies: initialMovies }) => {
-const [movies, setMovies] =useState(initialMovies);
-console.log(movies)
+const [movies, setMovies] =useState(initialMovies || []);
 
+
+console.log(movies)
 
 
 
@@ -21,6 +24,18 @@ console.log(movies)
          setMovies (movies.slice().sort((a, b) =>(b.rating - a.rating)))
     }
 }
+
+
+    const {data} = useParams();
+    
+    useEffect(() => {
+      async function getchMovie() {
+           const { data } = await axios.get(`https://www.omdbapi.com/?apikey=ba5cd1ce&i=fast&type=movie`);
+         setMovies(data.Search || []);
+        }
+        getchMovie();
+        
+    }, []);
 
 
   return (
@@ -45,10 +60,8 @@ console.log(movies)
               <div className="books">
                 {movies.map((movie) => (
                   <Movie movie={movie} key={movie.imdbID} />
-               
                 ))}
                 <FontAwesomeIcon icon="spinner" className="movies__loading--spinner" />
-                  
               </div>
             </div>
           </div>
@@ -59,3 +72,6 @@ console.log(movies)
 };
 
 export default Movies;
+
+
+
