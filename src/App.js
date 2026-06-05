@@ -4,7 +4,6 @@ import Footer from './Components/Footer';
 import Home from './Pages/Home';
 import Movies from './Pages/Movies';
 
-import { useEffect, useState } from 'react';
 import Movieinfo from './Pages/Movieinfo';
 
 function App() {
@@ -14,9 +13,9 @@ function App() {
       <div className="App">
         <Nav />
           <Routes>
-          <Route path="/"  element= {<Home Movies={Movies} />} />
-          <Route path="/movies"  element={<Movies Movies={Movies} />} />
-          <Route path="movies/:imdbID" element={<Movieinfo movies={Movies} /> } />
+          <Route path="/"  element= {<Home movies={movies} />} />
+          <Route path="/movies"  element={<Movies ovies={movies} />} />
+          <Route path="/movies/:imdbID" element={<Movieinfo movies={movies} /> } />
           </Routes>
         <Footer />
       </div>

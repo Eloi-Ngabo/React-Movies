@@ -4,12 +4,15 @@ import undrawVirtual from "../assets/undraw_virtual.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Landing = () => {
+
+const navigate = useNavigate()
+
   function searchMovies() {
     const searchInput = document.querySelector(".search-input");
     const searchTerm = searchInput.value.trim();
+    
     if (searchTerm) {
-      // Redirect to the movies page with the search term as a query parameter
-      useNavigate = `/movies?search=${encodeURIComponent(searchTerm)}`;
+      navigate(`/movies?search=${encodeURIComponent(searchTerm)}`);
     }
   }
 

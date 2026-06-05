@@ -8,6 +8,7 @@ import Movie from "../En/Movie";
 const Movieinfo = () => {
   const { imdbID } = useParams();
   const [movie, setMovie] = useState(null);
+  
 
   useEffect(() => {
     async function getMovieInfo() {
