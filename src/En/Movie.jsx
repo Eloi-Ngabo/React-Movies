@@ -5,6 +5,7 @@ import axios from 'axios';
 
 
 
+
 const Movie = ({ movie }) => {
   return (
     <div className="book">
