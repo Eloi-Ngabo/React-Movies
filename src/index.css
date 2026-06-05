@@ -367,6 +367,11 @@ FEATURES
   margin-bottom: 8px;
 }
 
+.book__title--skeleton {
+  height: 21px;
+  width: 100%;
+}
+
 .book__img--wrapper {
   margin-bottom: 8px;
   border-radius: 4px;

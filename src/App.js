@@ -7,25 +7,6 @@ import Movieinfo from './Pages/Movieinfo';
 
 
 
-// function App() {
-  
-
-//   return (
-//     <Router>
-//       <div className="App">
-//         <Nav />
-//           <Routes>
-//           <Route path="/"  element= {<Home movies={Movies} />} />
-//           <Route path="/movies"  element={<Movies movies={Movies} />} />
-//           <Route path="/movies/:imdbID" element={<Movieinfo movies={Movies} /> } />
-//           </Routes>
-//         <Footer />
-//       </div>
-//     </Router>
-//   );
-// }
-// export default App;
-
 function App() {
   return (
     <Router>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-import Movie from "../En/Movie";
+
 
 
 const Movieinfo = () => {
@@ -25,7 +25,6 @@ const Movieinfo = () => {
   if (!movie) {
     return <div>Loading...</div>;
   }
-
 
   return (
     <div id="books__body">
