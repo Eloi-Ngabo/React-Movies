@@ -1,10 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { Link, useParams } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import axios from 'axios';
 
-
-
+import { Link } from 'react-router-dom';
 
 const Movie = ({ movie }) => {
   return (
