@@ -652,10 +652,15 @@ select {
     margin-bottom: 24px;
   }
 
-  .cart__book--img {
+  .input {
+    display: none;
+     
+  }
+  .form {
+    padding-left: 0;
     display: none;
   }
-  .cart__book--info {
-    padding-left: 0;
+  .search{
+    width: 100%;
   }
 }
