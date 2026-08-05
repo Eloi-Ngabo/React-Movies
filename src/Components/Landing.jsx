@@ -32,7 +32,7 @@ const navigate = useNavigate()
               <input
                 type="text"
                 className="search-input"
-                placeholder="Search by Model, Make or Keyword"
+                placeholder="Search by Movie, Make or Keyword"
               ></input>
               <button
                 className="movies__search btn__search"
