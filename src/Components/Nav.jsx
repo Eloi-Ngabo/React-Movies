@@ -1,11 +1,11 @@
-import React from 'react';
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import blinkIcon from '../assets/blinker-icon.png';
 import  { Link }  from 'react-router-dom';
 
 
 
-const Nav = ({ numberOfItems }) => {
+const Nav = () => {
   function openMenu() {
     document.body.classList += " menu--open";
   };
@@ -58,7 +58,7 @@ const Nav = ({ numberOfItems }) => {
                        </Link> 
                      </li>
                     <li className="menu__list">
-                        <Link to="#" className="menu__link">
+                        <Link to="/" className="menu__link">
                         Contact
                        </Link>  
                     </li>
